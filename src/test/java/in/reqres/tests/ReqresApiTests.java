@@ -4,8 +4,6 @@ import in.reqres.models.CreateUserModel;
 import in.reqres.models.CreateUserResponseModel;
 import in.reqres.models.UpdateUserModel;
 import in.reqres.models.UpdateUserResponseModel;
-import io.restassured.RestAssured;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static in.reqres.specs.ReqresApiSpecs.*;
