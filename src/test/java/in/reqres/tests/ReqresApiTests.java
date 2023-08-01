@@ -16,11 +16,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ReqresApiTests {
 
-    @BeforeAll
-    static public void setUp() {
-        RestAssured.baseURI = "https://reqres.in";
-    }
-
     @Test
     void createUserTest() {
 
@@ -69,47 +64,29 @@ public class ReqresApiTests {
     @Test
     void getUsersListTest() {
 
-        given()
-                .log().uri()
-                .log().method()
-                .log().body()
+        step("Make request", () -> given(userRequestSpec)
                 .when()
-                .get("/api/users?page=2")
+                .get("/users?page=2")
                 .then()
-                .log().status()
-                .log().body()
-                .statusCode(200)
-                .body("data.size()", is(6))
-                .body("data.id", everyItem(notNullValue()));
+                .spec(getUsersListResponse)
+                .body("data.size()", is(6)));
     }
 
     @Test
     void deleteUserTest() {
-
-        given()
-                .log().uri()
-                .log().method()
-                .log().body()
+        step("Delete user", () -> given(userRequestSpec)
                 .when()
-                .delete("/api/users/2")
+                .delete("users/2")
                 .then()
-                .log().status()
-                .log().body()
-                .statusCode(204);
+                .spec(deleteUserResponse));
     }
 
     @Test
     void singleUserNotFoundTest() {
-
-        given()
-                .log().uri()
-                .log().method()
-                .log().body()
+        step("Make request", () -> given(userRequestSpec)
                 .when()
-                .get("/api/users/23")
+                .get("users/23")
                 .then()
-                .log().status()
-                .log().body()
-                .statusCode(404);
+                .spec(singleUserNotFoundResponse));
     }
 }

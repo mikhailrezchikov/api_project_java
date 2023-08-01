@@ -35,5 +35,22 @@ public class ReqresApiSpecs {
             .expectBody(matchesJsonSchemaInClasspath("schemas/update-user-schema.json"))
             .build();
 
+    public static ResponseSpecification getUsersListResponse = new ResponseSpecBuilder()
+            .log(STATUS)
+            .log(BODY)
+            .expectStatusCode(200)
+            .expectBody(matchesJsonSchemaInClasspath("schemas/get-users-list-schema.json"))
+            .build();
 
+    public static ResponseSpecification deleteUserResponse = new ResponseSpecBuilder()
+            .log(STATUS)
+            .log(BODY)
+            .expectStatusCode(204)
+            .build();
+
+    public static ResponseSpecification singleUserNotFoundResponse = new  ResponseSpecBuilder()
+            .log(STATUS)
+            .log(BODY)
+            .expectStatusCode(404)
+            .build();
 }
