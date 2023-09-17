@@ -26,7 +26,7 @@
 gradle clean api_tests
 ```
     
-### Сборка в Jenkins
+### Сборка в [Jenkins](https://jenkins.autotests.cloud/job/jenkins_rest_api_tests/)
 <p align="center">
 <img title="Jenkins Build" src="images/screens/Jenkins.png">
 </p>
