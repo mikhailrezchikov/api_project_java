@@ -31,7 +31,7 @@ gradle clean api_tests
 <img title="Jenkins Build" src="images/screens/Jenkins.png">
 </p>
 
-### Отчет в Allure report
+### Отчет в [Allure report](https://jenkins.autotests.cloud/job/jenkins_rest_api_tests/7/allure/)
 #### Основная страница отчета
 <p align="center">
 <img title="Jenkins Build" src="images/screens/Allure-report.png">
