@@ -10,7 +10,6 @@ import static io.restassured.filter.log.LogDetail.BODY;
 import static io.restassured.filter.log.LogDetail.STATUS;
 import static io.restassured.http.ContentType.JSON;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
-import static org.hamcrest.Matchers.notNullValue;
 
 public class ReqresApiSpecs {
     public static RequestSpecification userRequestSpec = with()
