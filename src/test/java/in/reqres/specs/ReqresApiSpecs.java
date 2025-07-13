@@ -17,6 +17,7 @@ public class ReqresApiSpecs {
             .log().method()
             .log().body()
             .filter(withCustomTemplates())
+            .header("x-api-key", "reqres-free-v1")
             .contentType(JSON)
             .baseUri("https://reqres.in")
             .basePath("/api");
